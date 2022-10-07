@@ -95,69 +95,7 @@ for (let i = 0; i < a.length; i++) {
                    }
                 }
 
-                document.body.ontouchstart =(e) =>{
-                    $(e.target).css({
-                        'border': '0.2vw solid white',
-                        'border-radius': '2.5vw'
-                    })
-                    StartX = e.touches[0].clientX;
-                    StartY = e.touches[0].clientY;
-                    var allBall= document.getElementsByClassName('ball');
-                    for(const x of allBall){
-                        if(e.target == x){item = x;}}
-                    document.body.ontouchmove =(ee) =>{
-                        var FinalX = ee.touches[0].clientX;
-                        var FinalY = ee.touches[0].clientY;
-                     //   console.log(((StartY-FinalY)/screen.availWidth)*100 )
-                        ///// LEFT ///////
-                        if(StartX-FinalX > (5.3*vw) && StartX-FinalX < (10.5*vw)){
-                            if(StartY-FinalY > (-1.4*vw) && StartY-FinalY < (2.2*vw)){
-                                left()
-                                document.body.ontouchmove = (event) =>{bubble(event)};
-                                $(e.target).css({
-                                    'border': 'none',
-                                    'border-radius': 'none'
-                                })
-                            } 
-                           }
-                        ///// RIGHT ///////  
-                      //  console.log(((StartX-FinalX)/screen.availWidth)*100 ) 
-                        if(StartX-FinalX > (-7*vw) && StartX-FinalX < (-3*vw)){
-                            if(StartY-FinalY > (-1.4*vw) && StartY-FinalY < (2.2*vw)){
-                                right()
-                                document.body.ontouchmove = (event) =>{bubble(event)};
-                                $(e.target).css({
-                                    'border': 'none',
-                                    'border-radius': 'none'
-                                })
-                            } 
-                           }
-                           ///// UP ///////  
-                        if(StartX-FinalX > (-0.5*vw) && StartX-FinalX < (1.2*vw)){
-                            if(StartY-FinalY > (2.5*vw) && StartY-FinalY < (7.5*vw)){
-                               up()
-                                document.body.ontouchmove = (event) =>{bubble(event)};
-                                $(e.target).css({
-                                    'border': 'none',
-                                    'border-radius': 'none'
-                                })
-                            } 
-                           }
-                        /////// DOWN ///////
-                      //  console.log(((StartY-FinalY)/screen.availWidth)*100 )
-                        if(StartX-FinalX > (-0.5*vw) && StartX-FinalX < (1.2*vw)){
-                            if(StartY-FinalY < (-2.5*vw) && StartY-FinalY > (-7.5*vw)){
-                               down()
-                                document.body.ontouchmove = (event) =>{bubble(event)};
-                                $(e.target).css({
-                                    'border': 'none',
-                                    'border-radius': 'none'
-                                })
-                            } 
-                           }   
-
-                    }
-                }   
+               
                
             
             $('#pad').css({opacity:'1'})
@@ -340,3 +278,75 @@ function openFullscreen() {
     }
   }
   var elem = document.body
+  
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  // true for mobile device
+  $('#playground').css({'margin-top':'-2.5vw'})
+}
+  
+  
+  
+  
+   document.body.ontouchstart =(e) =>{
+                    $(e.target).css({
+                        'border': '0.2vw solid white',
+                        'border-radius': '2.5vw'
+                    })
+                    StartX = e.touches[0].clientX;
+                    StartY = e.touches[0].clientY;
+                    var allBall= document.getElementsByClassName('ball');
+                    for(const x of allBall){
+                        if(e.target == x){item = x;}}
+                    document.body.ontouchmove =(ee) =>{
+                        var FinalX = ee.touches[0].clientX;
+                        var FinalY = ee.touches[0].clientY;
+                     //   console.log(((StartY-FinalY)/screen.availWidth)*100 )
+                        ///// LEFT ///////
+                        if(StartX-FinalX > (5.3*vw) && StartX-FinalX < (10.5*vw)){
+                            if(StartY-FinalY > (-1.4*vw) && StartY-FinalY < (2.2*vw)){
+                                left()
+                                document.body.ontouchmove = (event) =>{bubble(event)};
+                                $(e.target).css({
+                                    'border': 'none',
+                                    'border-radius': 'none'
+                                })
+                            } 
+                           }
+                        ///// RIGHT ///////  
+                      //  console.log(((StartX-FinalX)/screen.availWidth)*100 ) 
+                        if(StartX-FinalX > (-7*vw) && StartX-FinalX < (-3*vw)){
+                            if(StartY-FinalY > (-1.4*vw) && StartY-FinalY < (2.2*vw)){
+                                right()
+                                document.body.ontouchmove = (event) =>{bubble(event)};
+                                $(e.target).css({
+                                    'border': 'none',
+                                    'border-radius': 'none'
+                                })
+                            } 
+                           }
+                           ///// UP ///////  
+                        if(StartX-FinalX > (-0.5*vw) && StartX-FinalX < (1.2*vw)){
+                            if(StartY-FinalY > (2.5*vw) && StartY-FinalY < (7.5*vw)){
+                               up()
+                                document.body.ontouchmove = (event) =>{bubble(event)};
+                                $(e.target).css({
+                                    'border': 'none',
+                                    'border-radius': 'none'
+                                })
+                            } 
+                           }
+                        /////// DOWN ///////
+                      //  console.log(((StartY-FinalY)/screen.availWidth)*100 )
+                        if(StartX-FinalX > (-0.5*vw) && StartX-FinalX < (1.2*vw)){
+                            if(StartY-FinalY < (-2.5*vw) && StartY-FinalY > (-7.5*vw)){
+                               down()
+                                document.body.ontouchmove = (event) =>{bubble(event)};
+                                $(e.target).css({
+                                    'border': 'none',
+                                    'border-radius': 'none'
+                                })
+                            } 
+                           }   
+
+                    }
+                }   
