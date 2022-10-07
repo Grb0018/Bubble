@@ -27,7 +27,7 @@ if(commonItem.length>0){
             $(commonItem[ii][i].item).fadeOut(100);
             var top = parseInt($(commonItem[ii][i].item).css('top'))
             var left = parseInt($(commonItem[ii][i].item).css('left'))
-            for (let i = 0; i < 7; i++) {
+            for (let i = 0; i < 3; i++) {
                crack(top,left)
             }
           }
@@ -64,7 +64,7 @@ function colChk(xx){
         $(commonCol[0][i].item).fadeOut(100);
         var top = parseInt($(commonCol[0][i].item).css('top'));
         var left = parseInt($(commonCol[0][i].item).css('left'))
-            for (let i = 0; i < 7; i++) {
+            for (let i = 0; i < 3; i++) {
                crack(top,left)
             }
       }
