@@ -288,10 +288,15 @@ function openFullscreen() {
   
   
    document.body.ontouchstart =(e) =>{
-                    $(e.target).css({
-                        'border': '0.2vw solid white',
-                        'border-radius': '2.5vw'
-                    })
+                   var allBall= document.getElementsByClassName('ball');
+    for(const x of allBall){
+        if(e.target==x){
+            $(e.target).css({
+        'border': '0.2vw solid white',
+        'border-radius': '2.5vw'
+    })
+        }
+    }
                     StartX = e.touches[0].clientX;
                     StartY = e.touches[0].clientY;
                     var allBall= document.getElementsByClassName('ball');
