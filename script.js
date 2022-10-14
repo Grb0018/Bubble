@@ -25,10 +25,11 @@ document.body.onload =(e)=>{
 document.body.onclick=(e)=>{
     if(isPlaying == false){
         isPlaying = true;
+        document.getElementById('bgm').volume = '0.4';
         document.getElementById('bgm').play()
-        document.getElementById('bgm').volume = '0.2';
+        document.getElementById('bgm1').volume = '0.8';
         document.getElementById('bgm1').play()
-        document.getElementById('bgm1').volume = '0.6';
+        
         if(/Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
             openFullscreen()
         }
@@ -316,6 +317,7 @@ function openFullscreen() {
     var allBall= document.getElementsByClassName('ball');
     for(const x of allBall){
     }
+    document.getElementById('soundEffect').play();
     StartX = e.touches[0].clientX;
     StartY = e.touches[0].clientY;
     var allBall= document.getElementsByClassName('ball');
@@ -359,4 +361,4 @@ function openFullscreen() {
     }
 }   
 
-        
+               
