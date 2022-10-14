@@ -1,44 +1,5 @@
 var aa=0;
 var commonItem =[];
-// function verChk(verno){
-//        var a = document.body.querySelectorAll('item')
-//        aa = []
-//        for (let x of a) {
-//            if($(x).attr('rown')==verno){
-//                aa.push({item:x,bg:$(x).css('background-image'),rown:parseInt($(x).attr('rown')),coln:parseInt($(x).attr('coln')),no:parseInt($(x).attr('no'))})
-//            }
-//        }
-//        aa.sort((a, b) => {
-//            return a.no - b.no;
-//        });
-       
-//    for (let i = 0; i < aa.length-2; i++) {
-//       if(aa[i].bg==aa[i+1].bg){
-//           if(aa[i+1].bg==aa[i+2].bg){
-//            commonItem.push(
-//                   {0:aa[i],1:aa[i+1],2:aa[i+2]}
-//               )
-//               i= i+2;
-//       }}
-//    }
-//    if(commonItem.length>0){
-//        setTimeout(()=>{
-//            for (let ii = 0; ii < commonItem.length; ii++) {
-//                for (let i = 0; i < 3; i++) {
-//                    $(commonItem[ii][i].item).css('animation','scaledown 300ms ease-in')
-//                    setTimeout(()=>{$(commonItem[ii][i].item).fadeOut()},5) 
-//                    setTimeout(()=>{    
-//                    var top = parseInt($(commonItem[ii][i].item).css('top'))
-//                    var left = parseInt($(commonItem[ii][i].item).css('left'))
-//                    for (let i = 0; i < 5; i++) {
-//                        particle(top,left)
-//                    }
-//                  },50)}
-//            }
-//        },50)
-//    }
-
-// }
 var  aacol = []
 var commonCol = []
 function colChk(xx){
@@ -73,7 +34,7 @@ var commonCol = []
             setTimeout(()=>{
                 var top = parseInt($(commonCol[0][i].item).css('top'));
                 var left = parseInt($(commonCol[0][i].item).css('left'))
-                for (let i = 0; i < 3; i++) {
+                for (let i = 0; i < 5; i++) {
                     particle(top,left,bg)
                 }
           },50)}
@@ -146,9 +107,10 @@ function chk(xi){
         aa.sort((a, b) => {
             return a.no - b.no;
         });
+        console.log(aa)
     for (let i = 0; i < aa.length-2; i++) {
-       if(aa[i].bg==aa[i+1].bg){
-           if(aa[i+1].bg==aa[i+2].bg){
+       if(aa[i].bg==aa[i+1].bg && aa[i].no+1==(aa[i+1].no)){
+           if(aa[i+1].bg==aa[i+2].bg && aa[i+1].no+1==(aa[i+2].no)){
             commonItem.push(
                    {0:aa[i],1:aa[i+1],2:aa[i+2]}
                )
@@ -163,7 +125,7 @@ function chk(xi){
                     $(commonItem[0][i].item).fadeOut(220)
                     var top = parseInt($(commonItem[0][i].item).css('top'))
                     var left = parseInt($(commonItem[0][i].item).css('left'))
-                    for (let i = 0; i < 3; i++) {
+                    for (let i = 0; i < 5; i++) {
                         particle(top,left,bg)
                     }
                 }
