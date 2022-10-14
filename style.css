@@ -38,6 +38,7 @@ body{
     left: 22vw;
     z-index: 2;
     display: none;
+    background-size: cover;
 }
 #play{
   position: absolute;
@@ -178,8 +179,8 @@ body{
   
   .bubble1 {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 6.511vw;
+    height: 6.511vw;
     background-color: rgba(255,255,255,0.2);
     border-radius: 50%;
     box-shadow: inset -7px -7px 15px rgb(255 255 255 / 30%), 5px 5px 3px rgb(0 0 0 / 7%);
@@ -207,8 +208,8 @@ body{
   
   .bubble2 {
     position: absolute; 
-    width: 50px;
-    height: 50px;
+    width: 3.25vw;
+    height: 3.25vw;
     background-color: rgba(255,255,255,0.2);
     border-radius: 50%;
     box-shadow:  inset -7px -7px 15px rgba(255, 255, 255, 0.3), 5px 5px 3px rgba(0,0,0,0.07);
@@ -235,8 +236,8 @@ body{
   
   .bubble3 {
     position: absolute; 
-    width: 80px;
-    height: 80px;
+    width: 5.209vw;
+    height: 5.209vw;
     background-color: rgba(255,255,255,0.2);
     border-radius: 50%;
     box-shadow:  inset -7px -7px 15px rgba(255, 255, 255, 0.3), 5px 5px 3px rgba(0,0,0,0.07);
@@ -263,8 +264,8 @@ body{
   
   .bubble4 {
     position: absolute; 
-    width: 30px;
-    height: 30px;
+    width: 1.9535vw;
+    height: 1.9535vw;
     background-color: rgba(255,255,255,0.2);
     border-radius: 50%;
     box-shadow:  inset -5px -5px 8px rgba(255, 255, 255, 0.3), 5px 5px 3px rgba(0,0,0,0.07);
@@ -291,8 +292,8 @@ body{
   
   .bubble5 {
     position: absolute; 
-    width: 90px;
-    height: 90px;
+    width: 5.86vw;
+    height: 5.86vw;
     background-color: rgba(255,255,255,0.2);
     border-radius: 50%;
     box-shadow:  inset -7px -7px 15px rgba(255, 255, 255, 0.3), 5px 5px 3px rgba(0,0,0,0.07);
@@ -323,8 +324,8 @@ body{
   
   .bubble6 {
     position: absolute; 
-    width: 70px;
-    height: 70px;
+    width: 4.558vw;
+    height: 4.558vw;
     background-color: rgba(255,255,255,0.2);
     border-radius: 50%;
     box-shadow:  inset -7px -7px 15px rgba(255, 255, 255, 0.3), 5px 5px 3px rgba(0,0,0,0.07);
@@ -351,8 +352,8 @@ body{
   
   .bubble7 {
     position: absolute; 
-    width: 50px;
-    height: 50px;
+    width: 3.25vw;
+    height: 3.25vw;
     background-color: rgba(255,255,255,0.2);
     border-radius: 50%;
     box-shadow:  inset -7px -7px 15px rgba(255, 255, 255, 0.3), 5px 5px 3px rgba(0,0,0,0.07);
@@ -379,8 +380,8 @@ body{
   
   .bubble8 {
     position: absolute; 
-    width: 80px;
-    height: 80px;
+    width: 5.21vw;
+    height: 5.21vw;
     background-color: rgba(255,255,255,0.2);
     border-radius: 50%;
     box-shadow:  inset -7px -7px 15px rgba(255, 255, 255, 0.3), 5px 5px 3px rgba(0,0,0,0.07);
@@ -407,8 +408,8 @@ body{
   
   .bubble9 {
     position: absolute; 
-    width: 30px;
-    height: 30px;
+    width: 1.96vw;
+    height: 1.96vw;
     background-color: rgba(255,255,255,0.2);
     border-radius: 50%;
     box-shadow:  inset -5px -5px 8px rgba(255, 255, 255, 0.3), 5px 5px 3px rgba(0,0,0,0.07);
@@ -435,8 +436,8 @@ body{
   
   .bubble10 {
     position: absolute; 
-    width: 90px;
-    height: 90px;
+    width: 5.86vw;
+    height: 5.86vw;
     background-color: rgba(255,255,255,0.2);
     border-radius: 50%;
     box-shadow:  inset -7px -7px 15px rgba(255, 255, 255, 0.3), 5px 5px 3px rgba(0,0,0,0.07);
