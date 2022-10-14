@@ -11,7 +11,6 @@ var crush = 0;
       if(crush==0){
         crush =1;
         setTimeout(()=>{crush=0},230)
-        document.getElementById('soundEffect').src ="./sound/crush.mp3";
         document.getElementById('soundEffect').play(); 
       }
       
@@ -102,7 +101,6 @@ function particle(topy,leftx,ui){
    },500)
   $(c).fadeOut(time-4000)
   setTimeout(()=>{c.remove();},time-3800)
-  document.getElementById('soundEffect').src ="./sound/crush.mp3";
   document.getElementById('soundEffect').play();  
   
 }
@@ -137,7 +135,6 @@ function particlex(topy,leftx,ui,position){
    },400)
   $(c).fadeOut(time-4000)
  setTimeout(()=>{c.remove();},time-3800)
- document.getElementById('soundEffect').src ="./sound/crush.mp3";
  document.getElementById('soundEffect').play(); 
   
 }
