@@ -94,7 +94,7 @@ function particle(topy,leftx,ui){
   if(time<5000){time=5000}
   setTimeout(()=>{
    $(c).css('animation', 'up '+time+'ms linear')
-  },490)
+  },420)
   document.getElementById('playground').append(c);
   $(c).animate({
     left: left,
@@ -102,6 +102,8 @@ function particle(topy,leftx,ui){
    },500)
   $(c).fadeOut(time-4000)
   setTimeout(()=>{c.remove();},time-3800)
+  var audio = new Audio('./sound/crush.mp3')
+  audio.play()
   
 }
 
@@ -135,5 +137,7 @@ function particlex(topy,leftx,ui,position){
    },400)
   $(c).fadeOut(time-4000)
  setTimeout(()=>{c.remove();},time-3800)
+ var audio = new Audio('./sound/crush.mp3')
+  audio.play()
   
 }
