@@ -2,27 +2,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <script src="./chkscript.js" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+
     <script src="./bubble.js" defer></script>
     <title>Ball Match</title>
 </head>
 <body>
 <audio src="./sound/bgsound.mp3" loop id="bgm"></audio>
     <div id="game" class="container">
+      <img src="./balls/anchor.png" id="anchor">
         <div class="text">BUBBLES CRUSHER</div>
-        <div id="pad">
-            <img src="./balls/arrow.png" type="up" style="rotate: -90deg; margin-left: 4.5vw;"  class="arrow" onclick="up()">
-            <br>
-            <img src="./balls/arrow.png" type="left" style="rotate: -180deg" class="arrow" onclick="left()">
-            <img src="./balls/arrow.png" type="right" class="arrow" style="margin-left: 4vw;" onclick="right()">
-            <br>
-            <img src="./balls/arrow.png" type="down" class="arrow" style="margin-left: 4.5vw;rotate: 90deg;" onclick="down()">
-        </div>
         <div class="bubbles">
             <div class="bubble1"></div>
             <div class="bubble2"></div>
