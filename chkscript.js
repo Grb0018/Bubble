@@ -77,6 +77,10 @@ var commonCol = []
                     particle(top,left,bg)
                 }
           },50)}
+          setTimeout(()=>{
+            var audio = new Audio('./sound/yay-6120.mp3')
+            audio.play()
+        },200)
           downfall()
     },50)
   }
@@ -122,11 +126,9 @@ function downfall(){
         }
         for (let i = 0; i < blankItem.length; i++) {
             $(blankItem[i].item).remove();
-            var audio = new Audio('./sound/crush.mp3')
-            audio.play()
+            
         }  
-        var audio = new Audio('./sound/crush.mp3')
-        audio.play()  
+         
     }  
     }
     commonItem=[]
@@ -166,6 +168,11 @@ function chk(xi){
                         particle(top,left,bg)
                     }
                 }
+                setTimeout(()=>{
+                    var audio = new Audio('./sound/yay-6120.mp3')
+                    audio.play()
+                },200)
+                
                 downfall()
     }  
 
