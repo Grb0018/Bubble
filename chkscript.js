@@ -73,7 +73,7 @@ var commonCol = []
             setTimeout(()=>{
                 var top = parseInt($(commonCol[0][i].item).css('top'));
                 var left = parseInt($(commonCol[0][i].item).css('left'))
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 3; i++) {
                     particle(top,left,bg)
                 }
           },50)}
@@ -163,7 +163,7 @@ function chk(xi){
                     $(commonItem[0][i].item).fadeOut(220)
                     var top = parseInt($(commonItem[0][i].item).css('top'))
                     var left = parseInt($(commonItem[0][i].item).css('left'))
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < 3; i++) {
                         particle(top,left,bg)
                     }
                 }
