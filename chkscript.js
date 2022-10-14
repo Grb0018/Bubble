@@ -1,44 +1,49 @@
 var aa=0;
 var commonItem =[];
-function verChk(verno){
-    var a = document.body.querySelectorAll('item')
-    aa = []
-    for (let x of a) {
-        if($(x).attr('rown')==verno){
-            aa.push({item:x,bg:$(x).css('background-image'),rown:parseInt($(x).attr('rown')),coln:parseInt($(x).attr('coln')),no:parseInt($(x).attr('no'))})
-        }
-    }
-    aa.sort((a, b) => {
-        return a.no - b.no;
-    });
-    
-for (let i = 0; i < aa.length-2; i++) {
-   if(aa[i].bg==aa[i+1].bg){
-       if(aa[i+1].bg==aa[i+2].bg){
-        commonItem.push(
-               {0:aa[i],1:aa[i+1],2:aa[i+2]}
-           )
-           i= i+2;
-   }}
-}
-if(commonItem.length>0){
-    for (let ii = 0; ii < commonItem.length; ii++) {
-        for (let i = 0; i < 3; i++) {
-            $(commonItem[ii][i].item).fadeOut(100);
-            var top = parseInt($(commonItem[ii][i].item).css('top'))
-            var left = parseInt($(commonItem[ii][i].item).css('left'))
-            for (let i = 0; i < 3; i++) {
-               crack(top,left)
-            }
-          }
-    }
-    
-}
- setTimeout(()=>{downfall()},500)
-}
+// function verChk(verno){
+//        var a = document.body.querySelectorAll('item')
+//        aa = []
+//        for (let x of a) {
+//            if($(x).attr('rown')==verno){
+//                aa.push({item:x,bg:$(x).css('background-image'),rown:parseInt($(x).attr('rown')),coln:parseInt($(x).attr('coln')),no:parseInt($(x).attr('no'))})
+//            }
+//        }
+//        aa.sort((a, b) => {
+//            return a.no - b.no;
+//        });
+       
+//    for (let i = 0; i < aa.length-2; i++) {
+//       if(aa[i].bg==aa[i+1].bg){
+//           if(aa[i+1].bg==aa[i+2].bg){
+//            commonItem.push(
+//                   {0:aa[i],1:aa[i+1],2:aa[i+2]}
+//               )
+//               i= i+2;
+//       }}
+//    }
+//    if(commonItem.length>0){
+//        setTimeout(()=>{
+//            for (let ii = 0; ii < commonItem.length; ii++) {
+//                for (let i = 0; i < 3; i++) {
+//                    $(commonItem[ii][i].item).css('animation','scaledown 300ms ease-in')
+//                    setTimeout(()=>{$(commonItem[ii][i].item).fadeOut()},5) 
+//                    setTimeout(()=>{    
+//                    var top = parseInt($(commonItem[ii][i].item).css('top'))
+//                    var left = parseInt($(commonItem[ii][i].item).css('left'))
+//                    for (let i = 0; i < 5; i++) {
+//                        particle(top,left)
+//                    }
+//                  },50)}
+//            }
+//        },50)
+//    }
+
+// }
 var  aacol = []
 var commonCol = []
 function colChk(xx){
+    var  aacol = []
+var commonCol = []
     var a = document.body.querySelectorAll('item')
     aacol = []
       for (let x of a) {
@@ -60,16 +65,20 @@ function colChk(xx){
      }}
   }
   if(commonCol.length>0){
-    for (let i = 0; i < 3; i++) {
-        $(commonCol[0][i].item).fadeOut(100);
-        var top = parseInt($(commonCol[0][i].item).css('top'));
-        var left = parseInt($(commonCol[0][i].item).css('left'))
-            for (let i = 0; i < 3; i++) {
-               crack(top,left)
-            }
-      }
-      
-
+    setTimeout(()=>{
+        for (let i = 0; i < 3; i++) {
+            $(commonCol[0][i].item).css('animation','scaledown 300ms ease-in');
+            var bg = $(commonCol[0][i].item).css('background-image')
+            setTimeout(()=>{$(commonCol[0][i].item).fadeOut()},5) 
+            setTimeout(()=>{
+                var top = parseInt($(commonCol[0][i].item).css('top'));
+                var left = parseInt($(commonCol[0][i].item).css('left'))
+                for (let i = 0; i < 5; i++) {
+                    particle(top,left,bg)
+                }
+          },50)}
+          downfall()
+    },50)
   }
 }
 
@@ -103,10 +112,10 @@ function downfall(){
         
         for (let i = 0; i < column1.length; i++) {
             
-            $(allColumn[i].item).css({
+            $(allColumn[i].item).animate({
                 top: $(allColumn[i+blankItem.length].item).css('top'),
                 left: $(allColumn[i+blankItem.length].item).css('left')
-            })
+            },150)
             $(allColumn[i].item).attr('no',$(allColumn[i+blankItem.length].item).attr('no'))
             $(allColumn[i].item).attr('rown',$(allColumn[i+blankItem.length].item).attr('rown'))
             $(allColumn[i].item).attr('coln',$(allColumn[i+blankItem.length].item).attr('coln'))
@@ -122,4 +131,43 @@ function downfall(){
     }
     commonItem=[]
     commonCol=[]
+}
+
+function chk(xi){
+         commonItem =[];
+        var a = document.body.querySelectorAll('item')
+        aa = []
+        for (let x of a) {
+            if($(x).attr('rown')==xi){
+                aa.push({item:x,bg:$(x).css('background-image'),rown:parseInt($(x).attr('rown')),coln:parseInt($(x).attr('coln')),no:parseInt($(x).attr('no'))})
+            }
+        }
+        aa.sort((a, b) => {
+            return a.no - b.no;
+        });
+    for (let i = 0; i < aa.length-2; i++) {
+       if(aa[i].bg==aa[i+1].bg){
+           if(aa[i+1].bg==aa[i+2].bg){
+            commonItem.push(
+                   {0:aa[i],1:aa[i+1],2:aa[i+2]}
+               )
+               i= i+2;
+       }}
+    }
+    console.log(commonItem)
+    if(commonItem.length>0){
+                for (let i = 0; i < 3; i++) {
+                    $(commonItem[0][i].item).css('animation','scaledown 300ms ease-in')
+                    var bg = $(commonItem[0][i].item).css('background-image')
+                    $(commonItem[0][i].item).fadeOut(220)
+                    var top = parseInt($(commonItem[0][i].item).css('top'))
+                    var left = parseInt($(commonItem[0][i].item).css('left'))
+                    for (let i = 0; i < 5; i++) {
+                        particle(top,left,bg)
+                    }
+                }
+                downfall()
+    }  
+
+ //  downfall()
 }
