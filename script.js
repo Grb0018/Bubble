@@ -4,7 +4,19 @@ var StartY = 0;
 var drag;
 var siteChange = false;
 var click = true;
+var elem = document.body;
 
+/* When the openFullscreen() function is executed, open the video in fullscreen.
+Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
 
 document.body.onload =(e)=>{
     $("#game").fadeIn(100)
@@ -14,7 +26,12 @@ document.body.onclick=(e)=>{
     if(isPlaying == false){
         isPlaying = true;
         document.getElementById('bgm').play()
-        document.getElementById('bgm').volume = '0.4'
+        document.getElementById('bgm').volume = '0.2';
+        document.getElementById('bgm1').play()
+        document.getElementById('bgm1').volume = '0.6';
+        if(/Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            openFullscreen()
+        }
       }
     if(e.target == document.getElementById('play').querySelector('img')){
         $('#play').fadeOut('800')
@@ -298,12 +315,6 @@ function openFullscreen() {
   document.body.ontouchstart =(e) =>{
     var allBall= document.getElementsByClassName('ball');
     for(const x of allBall){
-        if(e.target==x){
-            $(e.target).css({
-        'border': '0.2vw solid white',
-        'border-radius': '2.5vw'
-    })
-        }
     }
     StartX = e.touches[0].clientX;
     StartY = e.touches[0].clientY;
@@ -319,10 +330,6 @@ function openFullscreen() {
             if(StartY-FinalY > (-1.4*vw) && StartY-FinalY < (2.2*vw)){
                 left()
                 document.body.ontouchmove = (event) =>{bubble(event)};
-                $(e.target).css({
-                    'border': 'none',
-                    'border-radius': 'none'
-                })
             } 
            }
         ///// RIGHT ///////  
@@ -331,10 +338,6 @@ function openFullscreen() {
             if(StartY-FinalY > (-1.4*vw) && StartY-FinalY < (2.2*vw)){
                 right()
                 document.body.ontouchmove = (event) =>{bubble(event)};
-                $(e.target).css({
-                    'border': 'none',
-                    'border-radius': 'none'
-                })
             } 
            }
            ///// UP ///////  
@@ -342,10 +345,6 @@ function openFullscreen() {
             if(StartY-FinalY > (2.5*vw) && StartY-FinalY < (7.5*vw)){
                up()
                 document.body.ontouchmove = (event) =>{bubble(event)};
-                $(e.target).css({
-                    'border': 'none',
-                    'border-radius': 'none'
-                })
             } 
            }
         /////// DOWN ///////
@@ -354,10 +353,6 @@ function openFullscreen() {
             if(StartY-FinalY < (-2.5*vw) && StartY-FinalY > (-7.5*vw)){
                down()
                 document.body.ontouchmove = (event) =>{bubble(event)};
-                $(e.target).css({
-                    'border': 'none',
-                    'border-radius': 'none'
-                })
             } 
            }   
 
