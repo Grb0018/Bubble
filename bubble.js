@@ -5,15 +5,14 @@ var count = 3*vw;
 var ani=0;
 var isPlaying = false;
 var crush = 0;
-const soundEffect = new Audio();
-soundEffect.autoplay = true;
 
  function bubble(event){
     if(ani==0){
       if(crush==0){
         crush =1;
         setTimeout(()=>{crush=0},230)
-            soundEffect.src="./sound/crush.mp3";
+        document.getElementById('soundEffect').src ="./sound/crush.mp3";
+        document.getElementById('soundEffect').play(); 
       }
       
         ani=1;
@@ -103,7 +102,8 @@ function particle(topy,leftx,ui){
    },500)
   $(c).fadeOut(time-4000)
   setTimeout(()=>{c.remove();},time-3800)
-  soundEffect.src="./sound/crush.mp3";
+  document.getElementById('soundEffect').src ="./sound/crush.mp3";
+  document.getElementById('soundEffect').play();  
   
 }
 
@@ -137,6 +137,7 @@ function particlex(topy,leftx,ui,position){
    },400)
   $(c).fadeOut(time-4000)
  setTimeout(()=>{c.remove();},time-3800)
- soundEffect.src="./sound/crush.mp3";
+ document.getElementById('soundEffect').src ="./sound/crush.mp3";
+ document.getElementById('soundEffect').play(); 
   
 }
