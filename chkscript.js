@@ -78,8 +78,7 @@ var commonCol = []
                 }
           },50)}
           setTimeout(()=>{
-            var audio = new Audio('./sound/yay-6120.mp3')
-            audio.play()
+            document.getElementById('yay').play()
         },200)
           downfall()
     },50)
@@ -169,8 +168,7 @@ function chk(xi){
                     }
                 }
                 setTimeout(()=>{
-                    var audio = new Audio('./sound/yay-6120.mp3')
-                    audio.play()
+                    document.getElementById('yay').play()
                 },200)
                 
                 downfall()
