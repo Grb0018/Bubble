@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./loader.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <script src="./chkscript.js" defer></script>
@@ -15,12 +16,41 @@
     <title>Ball Match</title>
 </head>
 <body>
+  <div class="loader">
+    <div class="loader-inner">
+      <div class="loader-line-wrap">
+        <div class="loader-line"></div>
+      </div>
+      <div class="loader-line-wrap">
+        <div class="loader-line"></div>
+      </div>
+      <div class="loader-line-wrap">
+        <div class="loader-line"></div>
+      </div>
+      <div class="loader-line-wrap">
+        <div class="loader-line"></div>
+      </div>
+      <div class="loader-line-wrap">
+        <div class="loader-line"></div>
+      </div>
+    </div>
+  </div>
+
+
 <audio src="./sound/bgsound.mp3" loop id="bgm"></audio>
 <audio src="./sound/birdfish-happy-loop-6199.mp3" loop id="bgm1"></audio>
 <audio src="./sound/yay-6120.mp3" id="yay"></audio>
 <audio id="soundEffect" src="./sound/crush.mp3"></audio>
+<audio src="./sound/win.mp3" id="win"></audio>
     <div id="game" class="container">
       <img src="./balls/anchor.png" id="anchor">
+      <div id="target">
+        <img src="./balls/TARGETBOARD.png" id="targetboard">
+        <div><img src="./balls/1.png" class="left"> <text class="right" id="right1">2</text></div>
+        <div><img src="./balls/2.png" class="left"> <text class="right" id="right2">2</text></div>
+        <div><img src="./balls/3.png" class="left"> <text class="right" id="right3">2</text></div>
+        <div><img src="./balls/4.png" class="left"> <text class="right" id="right4">2</text></div>
+      </div>
         <div class="text">BUBBLES CRUSHER</div>
         <div class="bubbles">
             <div class="bubble1"></div>
@@ -45,7 +75,7 @@
         <item style="background-image: url(./balls/3.png)" rown="1" coln="0" no="8" class="ball  a1"></item>
         <item style="background-image: url(./balls/3.png)" rown="1" coln="1" no="9" class="ball  b1"></item>
         <item style="background-image: url(./balls/2.png)" rown="1" coln="2" no="10" class="ball c1"></item>
-        <item style="background-image: url(./balls/5.png)" rown="1" coln="3" no="11" class="ball d1"></item>
+        <item style="background-image: url(./balls/3.png)" rown="1" coln="3" no="11" class="ball d1"></item>
         <item style="background-image: url(./balls/0.png)" rown="1" coln="4" no="12" class="ball e1"></item>
         <item style="background-image: url(./balls/0.png)" rown="1" coln="5" no="13" class="ball f1"></item>
         <item style="background-image: url(./balls/1.png)" rown="1" coln="6" no="14" class="ball g1"></item>
@@ -54,7 +84,7 @@
         <item style="background-image: url(./balls/3.png)" rown="2" coln="0" no="16" class="ball a2"></item>
         <item style="background-image: url(./balls/4.png)" rown="2" coln="1" no="17" class="ball b2"></item>
         <item style="background-image: url(./balls/4.png)" rown="2" coln="2" no="18" class="ball c2"></item>
-        <item style="background-image: url(./balls/5.png)" rown="2" coln="3" no="19" class="ball d2"></item>
+        <item style="background-image: url(./balls/2.png)" rown="2" coln="3" no="19" class="ball d2"></item>
         <item style="background-image: url(./balls/2.png)" rown="2" coln="4" no="20" class="ball e2"></item>
         <item style="background-image: url(./balls/0.png)" rown="2" coln="5" no="21" class="ball f2"></item>
         <item style="background-image: url(./balls/1.png)" rown="2" coln="6" no="22" class="ball g2"></item>
@@ -67,7 +97,7 @@
         <item style="background-image:url(./balls/1.png)" rown="3" coln="4" no="28" class="ball e3"></item>
         <item style="background-image:url(./balls/3.png)" rown="3" coln="5" no="29" class="ball f3"></item>
         <item style="background-image:url(./balls/3.png)" rown="3" coln="6" no="30" class="ball g3"></item>
-        <item style="background-image:url(./balls/0.png)" rown="3" coln="7" no="31" class="ball h3"></item>
+        <item style="background-image:url(./balls/1.png)" rown="3" coln="7" no="31" class="ball h3"></item>
         <br>
         <item style="background-image: url(./balls/4.png)" rown="4" coln="0" no="32" class="ball a4"></item>
         <item style="background-image: url(./balls/5.png)" rown="4" coln="1" no="33" class="ball b4"></item>
@@ -75,7 +105,7 @@
         <item style="background-image: url(./balls/0.png)" rown="4" coln="3" no="35" class="ball d4"></item>
         <item style="background-image: url(./balls/2.png)" rown="4" coln="4" no="36" class="ball e4"></item>
         <item style="background-image: url(./balls/1.png)" rown="4" coln="5" no="37" class="ball f4"></item>
-        <item style="background-image: url(./balls/0.png)" rown="4" coln="6" no="38" class="ball g4"></item>
+        <item style="background-image: url(./balls/3.png)" rown="4" coln="6" no="38" class="ball g4"></item>
         <item style="background-image: url(./balls/5.png)" rown="4" coln="7" no="39" class="ball h4"></item>
         <br>
         <item style="background-image: url(./balls/2.png)" rown="5" coln="0" no="40" class="ball a5"></item>
@@ -85,7 +115,7 @@
         <item style="background-image: url(./balls/1.png)" rown="5" coln="4" no="44" class="ball e5"></item>
         <item style="background-image: url(./balls/0.png)" rown="5" coln="5" no="45" class="ball f5"></item>
         <item style="background-image: url(./balls/4.png)" rown="5" coln="6" no="46" class="ball g5"></item>
-        <item style="background-image: url(./balls/0.png)" rown="5" coln="7" no="47" class="ball h5"></item>
+        <item style="background-image: url(./balls/4.png)" rown="5" coln="7" no="47" class="ball h5"></item>
      </div>
     </div>
 </body>
