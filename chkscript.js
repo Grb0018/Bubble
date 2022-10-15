@@ -27,8 +27,9 @@ var commonCol = []
   }
   if(commonCol.length>0){
     setTimeout(()=>{
-        a= $(commonCol[0][0].item).css('background-image')
-        bbg = './'+a.slice(114,a.length-2)
+        var b =('url("'+window.location.href)
+       var a= $(commonCol[0][0].item).css('background-image')
+       var bbg = './'+a.slice(b.length,-2)
         for (let i = 0; i < 3; i++) {
             $(commonCol[0][i].item).css('animation','scaledown 300ms ease-in');
             var bg = $(commonCol[0][i].item).css('background-image')
@@ -122,8 +123,10 @@ function chk(xi){
     }
     console.log(commonItem)
     if(commonItem.length>0){
-        a= $(commonItem[0][0].item).css('background-image')
-        bbg = './'+a.slice(114,a.length-2)
+       
+        var b =('url("'+window.location.href)
+       var a= $(commonItem[0][0].item).css('background-image')
+       var bbg = './'+a.slice(b.length,-2)
                 for (let i = 0; i < 3; i++) {
                     $(commonItem[0][i].item).css('animation','scaledown 300ms ease-in')
                     var bg = $(commonItem[0][i].item).css('background-image')
