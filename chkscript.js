@@ -140,6 +140,4 @@ function chk(xi){
                 putno(bbg)
                 downfall()
     }  
-
- //  downfall()
 }
