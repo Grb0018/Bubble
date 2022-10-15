@@ -136,5 +136,5 @@ function particlex(topy,leftx,ui,position){
   $(c).fadeOut(time-4000)
  setTimeout(()=>{c.remove();},time-3800)
  document.getElementById('soundEffect').play(); 
-  
+ 
 }
