@@ -54,12 +54,12 @@ body{
 }
 #play text{
   position: relative;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: system-ui;
   font-weight: 900;
   font-size: 3.5vw;
-  -webkit-text-stroke: 2px rgba(255,255,255,0.6);
+  -webkit-text-stroke: 0.2vw rgba(255,255,255,0.6);
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px rgb(255 255 255 / 10%);
+  text-shadow: 0.2vw 0.2vw rgb(255 255 255 / 10%);
 }
 .ball{
     height: 6vw;
@@ -204,17 +204,17 @@ body{
   }
   
   .text {
-    position: relative;
-    font-family: 'Luckiest Guy', cursive;
+     position: relative;
+    font-family: system-ui;
     font-weight: 900;
     font-size: 5.5vw;
-    -webkit-text-stroke: 2px rgba(255,255,255,0.6);
-    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.1vw rgb(255 255 255 / 68%);
+    -webkit-text-fill-color: #ffffff00;
     top: -9vw;
     left: 27.5vw;
     transform: translate(-50%,-50%);
     text-align: center;
-    text-shadow: 2px 2px rgb(255 255 255 / 10%);
+    text-shadow: 0.2vw 0.2vw rgb(255 255 255 / 10%);
 }
   .bubbles {
     position: absolute;
