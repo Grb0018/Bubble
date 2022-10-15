@@ -5,6 +5,48 @@ var drag;
 var siteChange = false;
 var click = true;
 var elem = document.body;
+const numbers = document.getElementsByClassName('left');
+const points = document.getElementsByClassName('right');
+
+
+function putno(itembg){
+    for (let i = 0; i < numbers.length; i++) {
+        if(itembg== $(numbers[i]).attr('src')){
+            var n = parseInt( numbers[i].nextElementSibling.innerHTML)
+            numbers[i].nextElementSibling.innerHTML= n+1
+        }
+    }
+    var complete=true;
+    for (let i = 0; i < points.length; i++) {
+        if($(points[i]).text() == 2){
+            $(points[i]).css({'color':' #bde55c'})
+        }
+        if($(points[i]).text() != 2){
+            complete=false
+        }
+        
+    }
+    if(complete==true){
+        document.getElementById('bgm').pause()
+        document.getElementById('bgm').volume='0.1'
+        document.getElementById('win').play()
+        setTimeout(()=>{
+            $('#anchor').css({'animation':'anchorup 1200ms linear'})
+            setTimeout(()=>{
+                $('#anchor').css({
+                    left: '-23vw',
+                    top: '-32vw'
+                })
+                $('#playground').fadeOut('1000')
+                $('#target').fadeOut('1000')
+            },1000)
+
+        },2000) 
+    }
+
+   
+}
+
 
 /* When the openFullscreen() function is executed, open the video in fullscreen.
 Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
@@ -19,23 +61,37 @@ function openFullscreen() {
 }
 
 document.body.onload =(e)=>{
+    setTimeout(()=>{$('.loader').fadeOut()},1000)
     $("#game").fadeIn(100)
 }
 
 document.body.onclick=(e)=>{
     if(isPlaying == false){
         isPlaying = true;
-        document.getElementById('bgm').volume = '0.4';
+        document.getElementById('bgm').volume = '0.2';
         document.getElementById('bgm').play()
         document.getElementById('bgm1').volume = '0.8';
         document.getElementById('bgm1').play()
+        document.getElementById('yay').play()
+        document.getElementById('yay').pause()
+        document.getElementById('soundEffect').play()
+        document.getElementById('soundEffect').pause()
         
         if(/Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
             openFullscreen()
         }
       }
     if(e.target == document.getElementById('play').querySelector('img')){
-        $('#play').fadeOut('800')
+        $('#target').css({'position':'absolute'})
+        $('#play').fadeOut()
+        $('#target').fadeIn()
+       
+
+        setTimeout(()=>{$('#target').css({'position':'initial'})},4000)
+        setTimeout(()=>{
+            for (let i = 0; i < points.length; i++) {
+                $(points[i]).text(0)
+            }
         $('.text').fadeOut('800')
         $('#playground').fadeIn('800')
         var a = document.getElementsByClassName('ball')
@@ -53,6 +109,8 @@ document.body.onclick=(e)=>{
                 particlex(37,16,'url(./balls/bubble.png)','game') 
             }
         },800)
+        },4300)
+        
        
         
         
