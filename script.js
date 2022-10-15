@@ -39,6 +39,12 @@ function putno(itembg){
                 })
                 $('#playground').fadeOut('1000')
                 $('#target').fadeOut('1000')
+
+                setTimeout(()=>{
+                    $('#targetboard').attr('src','./balls/TARGETBOARD1.png');
+                    $('#target').css('position','absolute')
+                    $('#target').fadeIn('1000')
+                },300)
             },1000)
 
         },2000) 
